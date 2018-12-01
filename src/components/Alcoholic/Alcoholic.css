@@ -1,0 +1,36 @@
+.alcoholic-div{
+  width: 102%;
+
+background-image: url('../../images/image13.jpeg');
+background-size: cover;
+background-position: top;
+  /*margin: -10px;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+
+}
+
+.alcoholic-drink-div{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.button-div{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2%;
+}
+
+select{
+  margin-left: auto;
+  margin-right: auto;
+}

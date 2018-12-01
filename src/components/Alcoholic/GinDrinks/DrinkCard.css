@@ -1,0 +1,15 @@
+.cocktail-card-div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.cocktail-image-div{
+  width: 50%;
+
+}
+
+.cocktail-text-div{
+  width: 50%;
+  padding: 2%;
+}

@@ -1,0 +1,87 @@
+.home-div{
+  width: 102%;
+  height: 100vh;
+  background: pink;
+  /*margin: -10px;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.image-div{
+  width: 60%;
+  animation-name: backgroundImage;
+  animation-duration: 33s;
+  animation-iteration-count: infinite;
+  background-position: center;
+  background-size: cover;
+}
+
+.text-div{
+  width: 40%;
+  padding: 5%;
+  text-align: center;
+}
+
+.title{
+  font-family: 'Alfa Slab One', cursive;
+  text-transform: uppercase;
+  font-size: 40px;
+
+}
+
+.text{
+  font-family: 'Amiri', serif;
+  font-size: 30px;
+}
+
+button{
+  background: none;
+  border: 1px solid black;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 30px;
+  margin: 2%;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+/*font-family: 'Alfa Slab One', cursive;
+font-family: 'Amiri', serif;*/
+
+@keyframes backgroundImage {
+    0%  {background-image: url('../../images/image1.jpeg')}
+    10%  {background-image: url('../../images/image2.jpeg')}
+    20%  {background-image: url('../../images/image3.jpeg')}
+    30%  {background-image: url('../../images/image4.jpeg')}
+    40%  {background-image: url('../../images/image5.jpeg')}
+    50%  {background-image: url('../../images/image6.jpeg')}
+    60%  {background-image: url('../../images/image7.jpeg')}
+    70%  {background-image: url('../../images/image8.jpeg')}
+    80%  {background-image: url('../../images/image9.jpeg')}
+    90%  {background-image: url('../../images/image10.jpeg')}
+    100%  {background-image: url('../../images/image11.jpeg')}
+}
+
+@media screen and (max-width: 600px) {
+  .home-div {
+    flex-direction: column;
+  }
+  .image-div{
+    width: 100%;
+    height: 60vh;
+  }
+
+  .text-div{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-div{
+    height: 40vh;
+  }
+}
