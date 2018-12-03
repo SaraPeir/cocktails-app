@@ -1,15 +1,12 @@
 .alcoholic-div{
   width: 102%;
-
-background-image: url('../../images/image13.jpeg');
-background-size: cover;
-background-position: top;
-  /*margin: -10px;*/
+  background-image: url('../../images/image13.jpeg');
+  background-size: cover;
+  background-position: top;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   min-height: 100vh;
-
 }
 
 .alcoholic-drink-div{

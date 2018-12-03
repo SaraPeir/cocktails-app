@@ -9,8 +9,8 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import SelectVodka from './VodkaDrinks/Select';
 import DrinkCardVodka from './VodkaDrinks/DrinkCard';
 
-// import SelectRhum from './RhumDrinks/Select';
-// import DrinkCardRhum from './RhumDrinks/DrinkCard';
+import SelectRhum from './RhumDrinks/Select';
+import DrinkCardRhum from './RhumDrinks/DrinkCard';
 
 
 class Alcoholic extends Component {
@@ -28,13 +28,11 @@ class Alcoholic extends Component {
           </div>
           <SelectVodka />
           <DrinkCardVodka />
+          <SelectRhum />
+          <DrinkCardRhum />
       </div>
     );
   }
 }
 
 export default Alcoholic;
-
-// Borrados desde return:
-// <SelectRhum />
-//           <DrinkCardRhum />

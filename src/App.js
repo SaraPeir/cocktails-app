@@ -4,10 +4,8 @@ import { connect } from 'react-redux'
 import { updateInfoNoAlc } from './actions';
 import { updateInfoGin } from './actions';
 import { updateInfoVodka } from './actions';
-// import { updateInfoRhum } from './actions';
-import { changeSelectText } from './actions';
-import DrinkCard from './components/Analcolic/DrinkCard';
-import Select from './components/Analcolic/Select';
+import rhumArray from './rhumDrinks.json';
+import { updateInfoRhum } from './actions';
 import Analcolic from './components/Analcolic/Analcolic';
 import Alcoholic from './components/Alcoholic/Alcoholic';
 import RecipesPage from './components/Recipes/RecipesPage';
@@ -21,7 +19,7 @@ class App extends Component {
     this.props.updateInfoNoAlc(),
     this.props.updateInfoGin(),
     this.props.updateInfoVodka()
-    // this.props.updateInfoRhum()
+    this.props.updateInfoRhum()
   }
 
   renderize(){
@@ -36,9 +34,9 @@ class App extends Component {
     setTimeout(this.renderUsersListVodka.bind(this), 4000);  //In order to resolve the problem that arrayList3 was seen in its initial state (a void array, length = 0)
   }
 
-  // renderizeRhum(){
-  //   setTimeout(this.renderUsersListRhum.bind(this), 4000);  //In order to resolve the problem that arrayList3 was seen in its initial state (a void array, length = 0)
-  // }
+  renderizeRhum(){
+    setTimeout(this.renderUsersListRhum.bind(this), 4000);  //In order to resolve the problem that arrayList3 was seen in its initial state (a void array, length = 0)
+  }
 
   renderUsersList() {
     if(this.props.arrayListNoAlc3 !== undefined && this.props.arrayListNoAlc3[0] !== undefined){
@@ -55,11 +53,18 @@ class App extends Component {
       return console.log('this.props.arrayListVodka3', this.props.arrayListVodka3[0].map((x, index) => x.drinks).map((y, index) => y[0]).map((z, index) => z.strDrink));
     } else {return console.log('this.props.arrayListVodka3 no definido')}}
 
-    // renderUsersListRhum() {
-    //   if(this.props.arrayListRhum !== undefined && this.props.arrayListRhum[0] !== undefined){
-    //     return console.log('this.props.arrayListRhum', this.props.arrayListRhum[0].data.map((x, index) =>  x.name));
-    //   } else {return console.log('this.props.arrayListRhum no definido')}
-    // }
+    renderUsersListRhum() {
+      if(this.props.arrayListRhum !== undefined && this.props.arrayListRhum[0] !== undefined){
+        return console.log('this.props.arrayListRhum', this.props.arrayListRhum[0].data.map((x, index) =>  x.name));
+      } else {return console.log('this.props.arrayListRhum no definido')}
+    }
+
+    mostraRhumArray(){
+      const array = [];
+      array.push(rhumArray);
+      console.log('mostraRhumArray', array[0].rhumDrinks);
+
+    }
 
     render() {
       return (
@@ -67,6 +72,7 @@ class App extends Component {
           {this.renderize()}
           {this.renderizeGin()}
           {this.renderizeVodka()}
+          {this.mostraRhumArray()}
           <Switch>
             <Route exact path='/' component={ Home } />
             <Route path='/alcoholic' component={ Alcoholic } />
@@ -78,8 +84,6 @@ class App extends Component {
     }
 }
 
-// borrado desde el return: {this.renderizeRhum()}
-
 function mapStateToProps(state) {
   return {
     arrayListNoAlc: state.dataNoAlc.drinksDataNoAlc,
@@ -88,13 +92,11 @@ function mapStateToProps(state) {
     arrayListNoAlc3: state.dataNoAlc.drinksDataNoAlc3,
     arrayListGin3: state.dataGin.drinksDataGin3,
     arrayListVodka3: state.dataGin.drinksDataVodka3,
-    // arrayListRhum: state.dataGin.drinksDataRhum
+    arrayListRhum: state.dataGin.drinksDataRhum
 
   }
 }
 
-
 // así podemos implementar React Redux con Router
 
-export default withRouter(connect(mapStateToProps, { updateInfoNoAlc, updateInfoGin, updateInfoVodka})(App));
- //borrado desde el connect: updateInfoRhum
+export default withRouter(connect(mapStateToProps, { updateInfoNoAlc, updateInfoGin, updateInfoVodka, updateInfoRhum})(App));
