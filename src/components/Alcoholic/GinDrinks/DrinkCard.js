@@ -34,7 +34,6 @@ let object = state.selValGin.drinkInfoGinArray;
 const object2 = object[0];
 
 if(object !== undefined){
-// console.log('ginObject', object)
 }
 
 function accessToDrinkName(){
